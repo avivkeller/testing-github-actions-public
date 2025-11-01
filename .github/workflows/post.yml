@@ -1,6 +1,8 @@
+name: Main2
+
 on:
   workflow_run:
-    workflows: [main.yml]
+    workflows: [Main]
     types:
       - completed
 
