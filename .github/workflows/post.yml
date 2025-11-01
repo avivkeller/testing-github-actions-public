@@ -1,0 +1,13 @@
+on:
+  workflow_run:
+    workflows: [main.yml]
+    types:
+      - completed
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo $JSON
+        env:
+          JSON: ${{ toJSON(github.event) }}
